@@ -1,0 +1,89 @@
+.navbar {
+    background-color: rgb(252, 13, 93);
+}
+
+/* The text on the left  */
+
+.navbar-light .navbar-brand {
+    font-size: 1.7rem;
+}
+
+/* The text on the right  */
+
+.navbar-nav {
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+/* The individual links  */
+
+.nav-link {
+    margin-left: 50px;
+    border: 2px solid black;
+    border-radius: 5px;
+    transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.nav-link:hover {
+    background-color: rgb(255, 109, 123);
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(182, 64, 64);
+    /*box-shadow : x-offset y-offset blur_radius spread-radious color*/
+    transform: translateY(-0.25em) translateX(-0.12em);
+}
+
+#btn-section {
+    display: flex;
+    /* align-items: flex-end; */
+    margin-top: 20px;
+    justify-content: space-around;
+}
+
+#header {
+    background-image: url(/public/images/Bank2.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 25rem;
+    margin-top: 20px;
+}
+
+.lead {
+    font-weight: bolder;
+    color: darkblue;
+}
+
+#btn-section .btn {
+    font-size: 1.8rem;
+    /* background-color: rgb(255, 44, 44);  */
+    background-color: rgb(252, 13, 93);
+}
+
+#btn-section .btn:hover {
+    background-color: rgb(247, 72, 72);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-color: peachpuff;
+}
+
+/* allcustomer.ejs css */
+
+table {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+table, tr, td {
+    border: 2px solid black !important;
+}
+
+td {
+    padding: 15px;
+}
+
+table a {
+    text-decoration: none;
+}

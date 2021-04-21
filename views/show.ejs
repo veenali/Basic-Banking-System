@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction</title>
+    <link rel="stylesheet" href="/public/css/show.css">
+    <link rel="stylesheet" href="/public/css/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">The Banking System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h2 class="text-center pt-4">Transaction</h2>
+
+        <form action="/transfer/<%= sender._id %> " method="post" name="tcredit" class="tabletext"><br>
+            <div>
+                <table class="table table-striped table-condensed table-bordered">
+                    <tr>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Balance</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <%= sender.name %>
+                        </td>
+                        <td>
+                            <%= sender.email %>
+                        </td>
+                        <td>
+                            <%= sender.totalAmount %>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <label>Transfer To:</label>
+            <select name="to" class="form-control" required>
+                <option value="" disabled selected>Choose</option>
+                <% for(let customer of customers) { %>
+                    <option value="<%= customer.name %>">
+                        <%= customer.name %>
+                    </option>
+                    <% } %>
+            </select>
+            <br>
+            <br>
+            <label>Amount:</label>
+            <input type="number" class="form-control" name="amount" required>
+            <br><br>
+            <div class="text-center">
+                <button class="btn btn-primary">Send money</button>
+                <a href="/customers" class="btn" id="allcustomers">All Customers</a>
+                <a href="/customers" class="btn btn-danger">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+    <footer class="text-center py-2 footer">
+        <p>&copy 2021. Made by <b>Veenali Newalkar</b> <br> For the Project of <b>The Sparks Foundation</b></p>
+    </footer>
+
+
+</body>
+
+</html>
